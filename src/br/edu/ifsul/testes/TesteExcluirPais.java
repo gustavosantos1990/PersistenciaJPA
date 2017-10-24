@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
  *
  * @author Gustavo
  */
-public class TestePersistirPais {
+public class TesteExcluirPais {
 
     /**
      * @param args the command line arguments
@@ -22,15 +22,12 @@ public class TestePersistirPais {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("IFSULModelPU");
         EntityManager em = emf.createEntityManager();
-        Pais p = new Pais();
-        //p.setId((1));
-        p.setNome("Arg");
-        p.setIso("BRA");
+        Pais p = em.find(Pais.class, 3);
         em.getTransaction().begin();
-        em.persist(p);
+        em.remove(p);
         em.getTransaction().commit();
         em.close();
         emf.close();
     }
-    
+
 }
