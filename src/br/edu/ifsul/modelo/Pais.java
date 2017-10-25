@@ -21,13 +21,13 @@ public class Pais implements Serializable {
     private Integer id;
 
     @Column(name = "nome", nullable = false, length = 50)
-    @Length(max = 50, message = "O não pode ter mais de {max} caracteres.")
+    @Length(max = 50, message = "O nome não pode ter mais de {max} caracteres.")
     @NotBlank(message = "O nome deve ser infomado.")
     @NotNull(message = "O nome não pode ser nulo")
     private String nome;
 
     @Column(name = "iso", nullable = false, length = 3)
-    @Length(max = 3, message = "O não pode ter mais de {max} caracteres.")
+    @Length(max = 3, message = "O ISO não pode ter mais de {max} caracteres.")
     @NotBlank(message = "O ISO deve ser infomado.")
     @NotNull(message = "O ISO não pode ser nulo")
     private String iso;
