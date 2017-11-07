@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirDesejos.java</file>
-            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirProduto.java</file>
-            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Produto.java</file>
+            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirPermissoesPessoa.java</file>
+            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Marca.java</file>
+            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/VendaItens.java</file>
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/PessoaFisica.java</file>
-            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirCategoria.java</file>
-            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirMarca.java</file>
+            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Venda.java</file>
         </group>
     </open-files>
 </project-private>
