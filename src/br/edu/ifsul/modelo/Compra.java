@@ -2,11 +2,16 @@
 package br.edu.ifsul.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,15 +23,34 @@ public class Compra implements Serializable {
     
     @EmbeddedId
     private CompraID id;
+    
     @NotNull
     @Temporal(TemporalType.DATE)
     @Column(name = "data", nullable = false)
     private Calendar data;
+    
     @NotNull(message = "O valor total deve ser informado")
     @Column(name = "valor_total", nullable = false, columnDefinition = "numeric(12,2)")
     private Double valorTotal;
+    
+    @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL,
+            orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<CompraItem> itens = new ArrayList<>();
+
+    public void adicionarItem(CompraItem obj){
+        obj.setCompra(this);
+        valorTotal += obj.getValorTotal();
+        this.itens.add(obj);
+    }
+    
+    public void removerItem(int index){
+        CompraItem obj = (CompraItem) this.itens.get(index);
+        valorTotal -= obj.getValorTotal();
+        this.itens.remove(index);
+    }
 
     public Compra() {
+        valorTotal = 0.0;
     }
 
     @Override
@@ -53,8 +77,6 @@ public class Compra implements Serializable {
         }
         return true;
     }
-    
-    
 
     public CompraID getId() {
         return id;
@@ -78,6 +100,14 @@ public class Compra implements Serializable {
 
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public List<CompraItem> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<CompraItem> itens) {
+        this.itens = itens;
     }
     
     
