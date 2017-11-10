@@ -5,6 +5,7 @@
         <group>
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Parcela.java</file>
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/ParcelaId.java</file>
+            <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirParcela.java</file>
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Venda.java</file>
         </group>
     </open-files>
