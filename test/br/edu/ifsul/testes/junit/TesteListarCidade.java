@@ -1,29 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
-import br.edu.ifsul.modelo.Estado;
-import br.edu.ifsul.modelo.Pais;
+import br.edu.ifsul.modelo.Cidade;
+import java.util.List;
 import javax.persistence.EntityManager;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- *
- * @author Gustavo
- */
-public class TestePersistirEstado {
+public class TesteListarCidade {
     
     EntityManager em;
     
     
-    public TestePersistirEstado() {
+    public TesteListarCidade() {
     }
     
     @Before
@@ -40,13 +32,15 @@ public class TestePersistirEstado {
     public void test(){
         boolean exception = false;
         try{
-            Estado e = new Estado();
-            e.setNome("Minas Gerais");
-            e.setUf(("MG"));
-            e.setPais(em.find(Pais.class,1));
-            em.getTransaction().begin();
-            em.persist(e);
-            em.getTransaction().commit();
+            String jpql = "from Cidade order by nome";
+            List<Cidade> lista = em.createQuery(jpql).getResultList();
+            
+            for (Cidade c : lista) {
+                System.out.println( "ID: " +c.getId() +
+                                    " Nome: " + c.getNome() + 
+                                    " Estado: " + c.getEstado().getNome());
+            }
+
         } catch(Exception e){
             exception = true;
             e.printStackTrace();

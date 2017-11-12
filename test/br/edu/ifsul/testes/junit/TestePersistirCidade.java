@@ -6,8 +6,8 @@
 package br.edu.ifsul.testes.junit;
 
 import br.edu.ifsul.jpa.EntityManagerUtil;
+import br.edu.ifsul.modelo.Cidade;
 import br.edu.ifsul.modelo.Estado;
-import br.edu.ifsul.modelo.Pais;
 import javax.persistence.EntityManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -18,12 +18,12 @@ import org.junit.Test;
  *
  * @author Gustavo
  */
-public class TestePersistirEstado {
+public class TestePersistirCidade {
     
     EntityManager em;
     
     
-    public TestePersistirEstado() {
+    public TestePersistirCidade() {
     }
     
     @Before
@@ -40,12 +40,13 @@ public class TestePersistirEstado {
     public void test(){
         boolean exception = false;
         try{
-            Estado e = new Estado();
-            e.setNome("Minas Gerais");
-            e.setUf(("MG"));
-            e.setPais(em.find(Pais.class,1));
+            Estado e = em.find(Estado.class, 3);
+            Cidade c = new Cidade();
+            c.setNome("Coronel Fabriciano");
+            c.setEstado(e);
+            
             em.getTransaction().begin();
-            em.persist(e);
+            em.persist(c);
             em.getTransaction().commit();
         } catch(Exception e){
             exception = true;
