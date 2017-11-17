@@ -16,5 +16,10 @@
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/src/br/edu/ifsul/modelo/Venda.java</file>
             <file>file:/home/gustavo/NetBeansProjects/PersistenciaJPA/test/br/edu/ifsul/testes/junit/TestePersistirCompra.java</file>
         </group>
+        <group name="Gustavo"/>
+        <group name="scb-web">
+            <file>file:/C:/Users/Automacao/Desktop/NetBeansProjects/Gustavo/PersistenciaJPA/src/br/edu/ifsul/modelo/Endereco.java</file>
+            <file>file:/C:/Users/Automacao/Desktop/NetBeansProjects/Gustavo/PersistenciaJPA/src/br/edu/ifsul/modelo/Cidade.java</file>
+        </group>
     </open-files>
 </project-private>

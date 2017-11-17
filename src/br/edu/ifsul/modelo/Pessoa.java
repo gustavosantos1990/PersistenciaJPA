@@ -46,7 +46,7 @@ public class Pessoa implements Serializable {
     @NotNull(message = "O telefone não pode ser nulo")
     @NotBlank(message = "O telefone deve ser infomado.")
     @Length(max = 50, message = "O telefone não pode ter mais de {max} caracteres.")
-    @Column(name = "telefone", length = 14, nullable = false)
+    @Column(name = "telefone", length = 15, nullable = false)
     private String telefone;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true, 
